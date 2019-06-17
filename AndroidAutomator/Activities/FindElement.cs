@@ -12,6 +12,9 @@ namespace AndroidAutomator.Activities
         public InArgument<string> Selector { get; set; }
 
         [Category("Input")]
+        public InArgument<AndroidElement> Parent { get; set; }
+
+        [Category("Input")]
         public InArgument<int> Index { get; set; }
 
         [Category("Input")]
@@ -24,6 +27,24 @@ namespace AndroidAutomator.Activities
         [Category("Output")]
         public OutArgument<AndroidElement> Element { get; set; }
 
+        protected override void CacheMetadata(CodeActivityMetadata metadata)
+        {
+            base.CacheMetadata(metadata);
+            // If neither a selector nor an element is entered
+            if (Selector == null && Parent == null)
+            {
+                metadata.AddValidationError("Please fill in all of the following fields: Selector, Parent.");
+            }
+            // If multiple elements is selected, an index must be provided
+            if (MultipleElements)
+            {
+                if (Index == null)
+                {
+                    metadata.AddValidationError("Please provide an index.");
+                }
+            }
+        }
+
         protected override void Execute(CodeActivityContext context)
         {
             // Inherit driver from scope activity
@@ -32,17 +53,38 @@ namespace AndroidAutomator.Activities
             // Gather fields
             string selector = Selector.Get(context);
             int index = Index.Get(context);
+            AndroidElement parent = Parent.Get(context);
 
-            // Find and return element based on type
+            // Logic to determine target element
             AndroidElement element;
-            if (!MultipleElements)
+            // User entered an element
+            if (parent != null)
             {
-                element = Helpers.GetElement(driver, SelectType, selector);
+                // Get child element based on parent
+                if (!MultipleElements)
+                {
+                    element = Helpers.GetChildElement(parent, SelectType, selector);
+                }
+                else
+                {
+                    element = Helpers.GetChildElementFromList(parent, SelectType, selector, index);
+                }
             }
+            // User didn't enter an element
             else
             {
-                element = Helpers.GetElementFromList(driver, SelectType, selector, index);
+                // Get element depending on SelectBy enum
+                if (!MultipleElements)
+                {
+                    element = Helpers.GetElement(driver, SelectType, selector);
+                }
+                else
+                {
+                    element = Helpers.GetElementFromList(driver, SelectType, selector, index);
+                }
             }
+            
+            // Return element
             Element.Set(context, element);
         }
     }

@@ -35,14 +35,14 @@ namespace AndroidAutomator.Activities
             // If neither a selector nor an element is entered
             if (Selector == null && Element == null)
             {
-                metadata.AddValidationError("You must fill in one of the following fields: Selector, Element.");
+                metadata.AddValidationError("Please fill in one of the following fields: Selector, Element.");
             }
             // If multiple elements is selected, an index must be provided
             if (MultipleElements)
             {
                 if (Index == null)
                 {
-                    metadata.AddValidationError("You must provide an index.");
+                    metadata.AddValidationError("Please provide an index.");
                 }
             }
         }

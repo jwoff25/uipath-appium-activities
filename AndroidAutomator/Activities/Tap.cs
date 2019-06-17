@@ -49,7 +49,7 @@ namespace AndroidAutomator.Activities
             {
                 if (X == null || Y == null)
                 {
-                    metadata.AddValidationError("You must provide both X and Y coordinates.");
+                    metadata.AddValidationError("Please provide both X and Y coordinates.");
                 }
             }
             // Selector must be provided if coordinates are not being used
@@ -57,13 +57,13 @@ namespace AndroidAutomator.Activities
             {
                 if (Selector == null && Element == null)
                 {
-                    metadata.AddValidationError("You must fill in one of the following fields: Selector, Element.");
+                    metadata.AddValidationError("Please fill in one of the following fields: Selector, Element.");
                 }
                 if (MultipleElements)
                 {
                     if (Index == null)
                     {
-                        metadata.AddValidationError("You must provide an index.");
+                        metadata.AddValidationError("Please provide an index.");
                     }
                 }
             }
