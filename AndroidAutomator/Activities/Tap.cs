@@ -59,11 +59,6 @@ namespace AndroidAutomator.Activities
                 {
                     metadata.AddValidationError("You must fill in one of the following fields: Selector, Element.");
                 }
-                // If both selector and element fields are filled
-                if (Selector != null && Element != null)
-                {
-                    metadata.AddValidationError("Selector and Element fields cannot both be filled.");
-                }
                 if (MultipleElements)
                 {
                     if (Index == null)
