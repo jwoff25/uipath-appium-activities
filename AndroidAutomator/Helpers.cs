@@ -21,7 +21,7 @@ namespace AndroidAutomator
             AndroidElement e = null;
             switch (by)
             {
-                case SelectBy.Id:
+                case SelectBy.ID:
                     e = driver.FindElementById(selector);
                     break;
                 case SelectBy.Class:
@@ -40,7 +40,7 @@ namespace AndroidAutomator
             AndroidElement e = null;
             switch (by)
             {
-                case SelectBy.Id:
+                case SelectBy.ID:
                     e = driver.FindElementsById(selector)[index];
                     break;
                 case SelectBy.Class:
@@ -59,7 +59,7 @@ namespace AndroidAutomator
             AndroidElement e = null;
             switch (by)
             {
-                case SelectBy.Id:
+                case SelectBy.ID:
                     e = (AndroidElement)parent.FindElementById(selector);
                     break;
                 case SelectBy.Class:
@@ -78,7 +78,7 @@ namespace AndroidAutomator
             AndroidElement e = null;
             switch (by)
             {
-                case SelectBy.Id:
+                case SelectBy.ID:
                     e = (AndroidElement)parent.FindElementsById(selector)[index];
                     break;
                 case SelectBy.Class:

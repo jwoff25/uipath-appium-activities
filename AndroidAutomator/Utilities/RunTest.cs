@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Activities;
+using AndroidAutomator.Activities;
 
-namespace AndroidAutomator.Testing
+namespace AndroidAutomator.Utilities
 {
 
     class RunTest : CodeActivity
@@ -15,13 +16,26 @@ namespace AndroidAutomator.Testing
 
         protected override void Execute(CodeActivityContext context)
         {
+            string path = Filepath.Get(context);
             switch(Type)
             {
                 case FileType.Excel:
+                    RunExcel(path);
                     break;
                 case FileType.JSON:
+                    RunJSON(path);
                     break;
             }
+        }
+
+        private void RunExcel(string path)
+        {
+
+        }
+
+        private void RunJSON(string path)
+        {
+
         }
     }
 }

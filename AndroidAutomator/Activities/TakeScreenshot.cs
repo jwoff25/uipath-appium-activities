@@ -15,6 +15,8 @@ namespace AndroidAutomator.Activities
         [Category("Options")]
         public InArgument<int> Delay { get; set; } = 1000;
 
+        // Add wait for element 
+
         protected override void Execute(CodeActivityContext context)
         {
             // Inherit driver from scope activity
@@ -24,7 +26,6 @@ namespace AndroidAutomator.Activities
             string filename = Filename.Get(context);
             int delay = Delay.Get(context);
 
-            // Apply delay
             Thread.Sleep(delay);
 
             // Tap on the element

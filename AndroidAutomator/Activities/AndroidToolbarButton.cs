@@ -5,7 +5,7 @@ using OpenQA.Selenium.Appium.Android;
 namespace AndroidAutomator.Activities
 {
 
-    public class PressAndroidKey : CodeActivity
+    public class AndroidToolbarButton : CodeActivity
     {
         [Category("Type")]
         [RequiredArgument]

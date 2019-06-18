@@ -8,7 +8,7 @@ namespace AndroidAutomator
 {
     public enum SelectBy
     {
-        Id,
+        ID,
         Class,
         XPath
     }
