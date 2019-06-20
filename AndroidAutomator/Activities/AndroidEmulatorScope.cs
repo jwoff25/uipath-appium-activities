@@ -35,13 +35,13 @@ namespace AndroidAutomator.Activities
         [RequiredArgument]
         public InArgument<string> AppActivity { get; set; }
 
-        [Category("Setup")]
+        [Category("Options")]
         public InArgument<int> WaitTime { get; set; }
 
-        [Category("Setup")]
+        [Category("Options")]
         public InArgument<string> Locale { get; set; }
 
-        [Category("Setup")]
+        [Category("Options")]
         public InArgument<string> Language { get; set; }
 
         public AndroidEmulatorScope()

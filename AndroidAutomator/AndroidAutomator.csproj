@@ -71,13 +71,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\AndroidEmulatorScope.cs" />
-    <Compile Include="Activities\FindElement.cs" />
+    <Compile Include="Utilities\FindElement.cs" />
     <Compile Include="AndroidEmulatorScopeDesigner.xaml.cs">
       <DependentUpon>AndroidEmulatorScopeDesigner.xaml</DependentUpon>
     </Compile>
     <Compile Include="Activities\EnterText.cs" />
     <Compile Include="Activities\GetText.cs" />
-    <Compile Include="Activities\PressAndroidKey.cs" />
+    <Compile Include="Activities\AndroidToolbarButton.cs" />
     <Compile Include="Enums\AndroidKeyCodes.cs" />
     <Compile Include="Enums\FileTypes.cs" />
     <Compile Include="Helpers.cs" />
@@ -86,7 +86,8 @@
     <Compile Include="Activities\TakeScreenshot.cs" />
     <Compile Include="Activities\Tap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Testing\RunTest.cs" />
+    <Compile Include="Utilities\RunTest.cs" />
+    <Compile Include="Utilities\WaitForElement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

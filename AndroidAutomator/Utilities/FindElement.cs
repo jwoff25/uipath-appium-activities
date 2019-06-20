@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using OpenQA.Selenium.Appium.Android;
 
-namespace AndroidAutomator.Activities
+namespace AndroidAutomator.Utilities
 {
 
     public class FindElement : CodeActivity
