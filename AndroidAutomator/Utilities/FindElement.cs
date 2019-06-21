@@ -33,7 +33,7 @@ namespace AndroidAutomator.Utilities
             // If neither a selector nor an element is entered
             if (Selector == null && Parent == null)
             {
-                metadata.AddValidationError("Please fill in all of the following fields: Selector, Parent.");
+                metadata.AddValidationError("Please fill in either/both of the following fields: Selector, Parent.");
             }
             // If multiple elements is selected, an index must be provided
             if (MultipleElements)

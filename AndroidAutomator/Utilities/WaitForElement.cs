@@ -7,7 +7,6 @@ using OpenQA.Selenium;
 
 namespace AndroidAutomator.Utilities
 {
-    // NOT WORKING -- InvalidOperationException
     public class WaitForElement : CodeActivity
     {
         [Category("Input")]
@@ -67,7 +66,6 @@ namespace AndroidAutomator.Utilities
                     {
                         return Helpers.GetElementFromList(driver, SelectType, selector, index).Displayed;
                     }
-                    
                 }
                 catch (StaleElementReferenceException)
                 {

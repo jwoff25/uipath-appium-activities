@@ -44,6 +44,9 @@ namespace AndroidAutomator.Activities
         [Category("Options")]
         public InArgument<string> Language { get; set; }
 
+        [Category("Options")]
+        public InArgument<string> ScreenshotPath { get; set; }
+
         public AndroidEmulatorScope()
         {
             Body = new ActivityAction<AndroidDriver<AndroidElement>>
@@ -64,6 +67,7 @@ namespace AndroidAutomator.Activities
             string locale = Locale.Get(context) ?? "US";
             string language = Language.Get(context) ?? "en";
             int waitTime = WaitTime.Get(context);
+            string screenshotPath = ScreenshotPath.Get(context);
 
 
             // Initialize Driver and Appium Server
@@ -86,6 +90,8 @@ namespace AndroidAutomator.Activities
             options.AddAdditionalCapability(MobileCapabilityType.App, apkPath);
             options.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, package);
             options.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, activity);
+            //Default Screenshot Path
+            options.AddAdditionalCapability(AndroidMobileCapabilityType.AndroidScreenshotPath, screenshotPath);
 
             driver = new AndroidDriver<AndroidElement>(server, options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(waitTime);
