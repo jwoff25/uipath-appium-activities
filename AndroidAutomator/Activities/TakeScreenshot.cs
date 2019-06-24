@@ -1,8 +1,10 @@
-﻿using System.Threading;
+﻿using System.IO;
+using System.Threading;
 using System.Activities;
 using System.ComponentModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Appium.Enums;
 
 namespace AndroidAutomator.Activities
 {
@@ -26,11 +28,15 @@ namespace AndroidAutomator.Activities
             string filename = Filename.Get(context);
             int delay = Delay.Get(context);
 
+            // Set up path
+            string defaultPath = driver.Capabilities.GetCapability(AndroidMobileCapabilityType.AndroidScreenshotPath) as string;
+            string fullPath = Path.Combine(defaultPath, filename + ".png");
+
             Thread.Sleep(delay);
 
-            // Tap on the element
+            // Take screenshot
             Screenshot s = driver.GetScreenshot();
-            s.SaveAsFile(filename + ".png", ScreenshotImageFormat.Png);
+            s.SaveAsFile(fullPath, ScreenshotImageFormat.Png);
         }
     }
 }

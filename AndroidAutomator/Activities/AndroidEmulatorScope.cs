@@ -67,7 +67,7 @@ namespace AndroidAutomator.Activities
             string locale = Locale.Get(context) ?? "US";
             string language = Language.Get(context) ?? "en";
             int waitTime = WaitTime.Get(context);
-            string screenshotPath = ScreenshotPath.Get(context);
+            string screenshotPath = ScreenshotPath.Get(context) ?? "";
 
 
             // Initialize Driver and Appium Server
