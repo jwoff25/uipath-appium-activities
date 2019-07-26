@@ -5,6 +5,7 @@ using System.ComponentModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
+using System;
 
 namespace AndroidAutomator.Activities
 {
