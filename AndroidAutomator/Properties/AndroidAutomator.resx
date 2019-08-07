@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AndroidVersionDesc" xml:space="preserve">
+    <value>Version of Android device.</value>
+  </data>
+  <data name="AndroidVersionField" xml:space="preserve">
+    <value>AndroidVersion</value>
+  </data>
+  <data name="ApkPathDesc" xml:space="preserve">
+    <value>Path to target APK file.</value>
+  </data>
+  <data name="ApkPathField" xml:space="preserve">
+    <value>APKFilePath</value>
+  </data>
+  <data name="App" xml:space="preserve">
+    <value>App</value>
+  </data>
+  <data name="AppActivityDesc" xml:space="preserve">
+    <value>Activity to launch in to.</value>
+  </data>
+  <data name="AppActivityField" xml:space="preserve">
+    <value>AppActivity</value>
+  </data>
+  <data name="AppPackageDesc" xml:space="preserve">
+    <value>Name of the application package.</value>
+  </data>
+  <data name="AppPackageField" xml:space="preserve">
+    <value>AppPackage</value>
+  </data>
+  <data name="Coordinates" xml:space="preserve">
+    <value>Coordinates</value>
+  </data>
+  <data name="DelayDesc" xml:space="preserve">
+    <value>Time to wait before action is performed (in milliseconds).</value>
+  </data>
+  <data name="DelayField" xml:space="preserve">
+    <value>Delay</value>
+  </data>
+  <data name="Device" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="DeviceNameDesc" xml:space="preserve">
+    <value>Name of Android device (can be anything but must be filled).</value>
+  </data>
+  <data name="DeviceNameField" xml:space="preserve">
+    <value>DeviceName</value>
+  </data>
+  <data name="Do" xml:space="preserve">
+    <value>Do</value>
+  </data>
+  <data name="ElementDesc" xml:space="preserve">
+    <value>&lt;AndroidElement&gt; object for target UI element.</value>
+  </data>
+  <data name="ElementField" xml:space="preserve">
+    <value>Element</value>
+  </data>
+  <data name="EndXDesc" xml:space="preserve">
+    <value>X coordinate for swipe destination.</value>
+  </data>
+  <data name="EndXField" xml:space="preserve">
+    <value>EndX</value>
+  </data>
+  <data name="EndYDesc" xml:space="preserve">
+    <value>Y coordinate for swipe destination.</value>
+  </data>
+  <data name="EndYField" xml:space="preserve">
+    <value>EndY</value>
+  </data>
+  <data name="EnterTextActivityDesc" xml:space="preserve">
+    <value>Enter text into a UI element.</value>
+  </data>
+  <data name="EnterTextActivityName" xml:space="preserve">
+    <value>Enter Text</value>
+  </data>
+  <data name="EnterTextDesc" xml:space="preserve">
+    <value>Text to be entered into UI element.</value>
+  </data>
+  <data name="ExplicitWaitDesc" xml:space="preserve">
+    <value>Time to wait for target element to appear.</value>
+  </data>
+  <data name="FilenameDesc" xml:space="preserve">
+    <value>Filename of screenshot.</value>
+  </data>
+  <data name="FilenameField" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="FindElementActivityDesc" xml:space="preserve">
+    <value>Find an element based on ID, Class, or XPath and return the element as an &lt;AndroidElement&gt; object.</value>
+  </data>
+  <data name="FindElementActivityName" xml:space="preserve">
+    <value>Find Element</value>
+  </data>
+  <data name="GetTextActivityDesc" xml:space="preserve">
+    <value>Get text from a UI element.</value>
+  </data>
+  <data name="GetTextActivityName" xml:space="preserve">
+    <value>Get Text</value>
+  </data>
+  <data name="GetTextDesc" xml:space="preserve">
+    <value>Text extracted from UI element.</value>
+  </data>
+  <data name="IndexDesc" xml:space="preserve">
+    <value>Index of UI element within a list of elements (only relevant when using MultipleElements).</value>
+  </data>
+  <data name="IndexField" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>Input</value>
+  </data>
+  <data name="KeyCodeDesc" xml:space="preserve">
+    <value>Android toolbar button key.</value>
+  </data>
+  <data name="KeyCodeField" xml:space="preserve">
+    <value>KeyCode</value>
+  </data>
+  <data name="LanguageDesc" xml:space="preserve">
+    <value>Set device language, paired with Locale.</value>
+  </data>
+  <data name="LanguageField" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LocaleDesc" xml:space="preserve">
+    <value>Set device locale, paired with Language.</value>
+  </data>
+  <data name="LocaleField" xml:space="preserve">
+    <value>Locale</value>
+  </data>
+  <data name="LongPressActivityDesc" xml:space="preserve">
+    <value>Long press on a UI element.</value>
+  </data>
+  <data name="LongPressActivityName" xml:space="preserve">
+    <value>Long Press</value>
+  </data>
+  <data name="MultipleElementsDesc" xml:space="preserve">
+    <value>Set to true if Selector is expected to return multiple elements (eg. using a Class selector will most likely return multiple elements).</value>
+  </data>
+  <data name="MultipleElementsField" xml:space="preserve">
+    <value>MultipleElements</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="ParentDesc" xml:space="preserve">
+    <value>&lt;AndroidElement&gt; object containing the target UI element as a child.</value>
+  </data>
+  <data name="ParentField" xml:space="preserve">
+    <value>Parent</value>
+  </data>
+  <data name="ScopeActivityDesc" xml:space="preserve">
+    <value>Scope activity for Android Automation. All other activities must be placed within this scope. Parameters for the target Android Device and application can be set here, as well as other options like the root file path for screenshots and Language/Locale.</value>
+  </data>
+  <data name="ScopeActivityName" xml:space="preserve">
+    <value>Android Activity Scope</value>
+  </data>
+  <data name="ScreenshotPathDesc" xml:space="preserve">
+    <value>File path for screenshots to be saved in.</value>
+  </data>
+  <data name="ScreenshotPathField" xml:space="preserve">
+    <value>ScreenshotPath</value>
+  </data>
+  <data name="SelectorDesc" xml:space="preserve">
+    <value>String selector for target UI element.</value>
+  </data>
+  <data name="SelectorField" xml:space="preserve">
+    <value>Selector</value>
+  </data>
+  <data name="SelectTypeDesc" xml:space="preserve">
+    <value>Set type of selector (ID, Class, or XPath).</value>
+  </data>
+  <data name="SelectTypeField" xml:space="preserve">
+    <value>SelectType</value>
+  </data>
+  <data name="StartXDesc" xml:space="preserve">
+    <value>X coordinate for swipe origin.</value>
+  </data>
+  <data name="StartXField" xml:space="preserve">
+    <value>StartX</value>
+  </data>
+  <data name="StartYDesc" xml:space="preserve">
+    <value>Y coordinate for swipe origin.</value>
+  </data>
+  <data name="StartYField" xml:space="preserve">
+    <value>StartY</value>
+  </data>
+  <data name="SwipeActivityDesc" xml:space="preserve">
+    <value>Perform a swipe action based on coordinates provided.</value>
+  </data>
+  <data name="SwipeActivityName" xml:space="preserve">
+    <value>Swipe</value>
+  </data>
+  <data name="TakeScreenshotActivityDesc" xml:space="preserve">
+    <value>Take a screenshot of the current screen and save it based on the ScreenshotPath property from the scope activity.</value>
+  </data>
+  <data name="TakeScreenshotActivityName" xml:space="preserve">
+    <value>TakeScreenshot</value>
+  </data>
+  <data name="TapActivityDesc" xml:space="preserve">
+    <value>Tap on a UI element or coordinates.</value>
+  </data>
+  <data name="TapActivityName" xml:space="preserve">
+    <value>Tap</value>
+  </data>
+  <data name="TextField" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="ToolbarActivityDesc" xml:space="preserve">
+    <value>Provides access to the back/home buttons on the Android Toolbar.</value>
+  </data>
+  <data name="ToolbarActivityName" xml:space="preserve">
+    <value>Android Toolbar Buttons</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="UseCoordinatesDesc" xml:space="preserve">
+    <value>When True, (X, Y) coordinates are used instead of Element/Selector.</value>
+  </data>
+  <data name="UseCoordinatesField" xml:space="preserve">
+    <value>UseCoordinates</value>
+  </data>
+  <data name="WaitForElementActivityDesc" xml:space="preserve">
+    <value>Force the process to wait for a certain element to appear; based on ID, Class or XPath.</value>
+  </data>
+  <data name="WaitForElementActivityName" xml:space="preserve">
+    <value>Wait for Activity</value>
+  </data>
+  <data name="WaitTimeDesc" xml:space="preserve">
+    <value>Default amount of time the program will wait for elements to appear.</value>
+  </data>
+  <data name="WaitTimeField" xml:space="preserve">
+    <value>WaitTime</value>
+  </data>
+  <data name="XDesc" xml:space="preserve">
+    <value>X coordinate of target UI element.</value>
+  </data>
+  <data name="XField" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="YDesc" xml:space="preserve">
+    <value>Y coordinate of target UI element.</value>
+  </data>
+  <data name="YField" xml:space="preserve">
+    <value>Y</value>
+  </data>
+</root>

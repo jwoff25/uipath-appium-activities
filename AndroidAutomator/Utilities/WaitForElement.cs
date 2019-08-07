@@ -4,26 +4,39 @@ using System.ComponentModel;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium;
+using AndroidAutomator.Properties;
 
 namespace AndroidAutomator.Utilities
 {
+    [LocalizedDisplayName(nameof(Resources.WaitForElementActivityName))]
+    [LocalizedDescription(nameof(Resources.WaitForElementActivityDesc))]
     public class WaitForElement : CodeActivity
     {
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.SelectorField))]
+        [LocalizedDescription(nameof(Resources.SelectorDesc))]
         [RequiredArgument]
         public InArgument<string> Selector { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.IndexField))]
+        [LocalizedDescription(nameof(Resources.IndexDesc))]
         public InArgument<int> Index { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.SelectTypeField))]
+        [LocalizedDescription(nameof(Resources.SelectTypeDesc))]
         [RequiredArgument]
         public SelectBy SelectType { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.WaitTimeField))]
+        [LocalizedDescription(nameof(Resources.ExplicitWaitDesc))]
         public InArgument<int> Time { get; set; } = 10;
 
-        [Category("Options")]
+        [LocalizedCategory(nameof(Resources.Options))]
+        [LocalizedDisplayName(nameof(Resources.MultipleElementsField))]
+        [LocalizedDescription(nameof(Resources.MultipleElementsDesc))]
         public bool MultipleElements { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

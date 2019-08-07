@@ -1,30 +1,44 @@
-﻿using System.Activities;
+﻿using AndroidAutomator.Properties;
+using System.Activities;
 using System.ComponentModel;
 using OpenQA.Selenium.Appium.Android;
 
 namespace AndroidAutomator.Utilities
 {
-
+    [LocalizedDisplayName(nameof(Resources.FindElementActivityName))]
+    [LocalizedDescription(nameof(Resources.FindElementActivityDesc))]
     public class FindElement : CodeActivity
     {
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.SelectorField))]
+        [LocalizedDescription(nameof(Resources.SelectorDesc))]
         [RequiredArgument]
         public InArgument<string> Selector { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.ParentField))]
+        [LocalizedDescription(nameof(Resources.ParentDesc))]
         public InArgument<AndroidElement> Parent { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.IndexField))]
+        [LocalizedDescription(nameof(Resources.IndexDesc))]
         public InArgument<int> Index { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.SelectTypeField))]
+        [LocalizedDescription(nameof(Resources.SelectTypeDesc))]
         [RequiredArgument]
         public SelectBy SelectType { get; set; }
 
-        [Category("Options")]
+        [LocalizedCategory(nameof(Resources.Options))]
+        [LocalizedDisplayName(nameof(Resources.MultipleElementsField))]
+        [LocalizedDescription(nameof(Resources.MultipleElementsDesc))]
         public bool MultipleElements { get; set; }
 
-        [Category("Output")]
+        [LocalizedCategory(nameof(Resources.Options))]
+        [LocalizedDisplayName(nameof(Resources.ElementField))]
+        [LocalizedDescription(nameof(Resources.ElementDesc))]
         public OutArgument<AndroidElement> Element { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

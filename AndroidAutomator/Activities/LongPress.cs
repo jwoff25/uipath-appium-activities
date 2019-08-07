@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using AndroidAutomator.Properties;
+using System.Threading;
 using System.Activities;
 using System.ComponentModel;
 using OpenQA.Selenium.Appium.Android;
@@ -6,34 +7,54 @@ using OpenQA.Selenium.Appium.MultiTouch;
 
 namespace AndroidAutomator.Activities
 {
+    [LocalizedDisplayName(nameof(Resources.LongPressActivityName))]
+    [LocalizedDescription(nameof(Resources.LongPressActivityDesc))]
     public class LongPress : CodeActivity
     {
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.SelectorField))]
+        [LocalizedDescription(nameof(Resources.SelectorDesc))]
         public InArgument<string> Selector { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.ElementField))]
+        [LocalizedDescription(nameof(Resources.ElementDesc))]
         public InArgument<AndroidElement> Element { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.IndexField))]
+        [LocalizedDescription(nameof(Resources.IndexDesc))]
         public InArgument<int> Index { get; set; }
 
-        [Category("Options")]
+        [LocalizedCategory(nameof(Resources.Options))]
+        [LocalizedDisplayName(nameof(Resources.MultipleElementsField))]
+        [LocalizedDescription(nameof(Resources.MultipleElementsDesc))]
         public bool MultipleElements { get; set; }
 
-        [Category("Options")]
+        [LocalizedCategory(nameof(Resources.Options))]
+        [LocalizedDisplayName(nameof(Resources.UseCoordinatesField))]
+        [LocalizedDescription(nameof(Resources.UseCoordinatesDesc))]
         public bool UseCoordinates { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.SelectTypeField))]
+        [LocalizedDescription(nameof(Resources.SelectTypeDesc))]
         [RequiredArgument]
         public SelectBy SelectType { get; set; }
 
-        [Category("Options")]
+        [LocalizedCategory(nameof(Resources.Options))]
+        [LocalizedDisplayName(nameof(Resources.DelayField))]
+        [LocalizedDescription(nameof(Resources.DelayDesc))]
         public InArgument<int> Delay { get; set; }
 
-        [Category("Coordinates")]
+        [LocalizedCategory(nameof(Resources.Coordinates))]
+        [LocalizedDisplayName(nameof(Resources.XField))]
+        [LocalizedDescription(nameof(Resources.XDesc))]
         public InArgument<int> X { get; set; }
 
-        [Category("Coordinates")]
+        [LocalizedCategory(nameof(Resources.Coordinates))]
+        [LocalizedDisplayName(nameof(Resources.YField))]
+        [LocalizedDescription(nameof(Resources.YField))]
         public InArgument<int> Y { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

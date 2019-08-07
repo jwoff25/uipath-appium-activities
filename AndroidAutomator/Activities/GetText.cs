@@ -1,29 +1,43 @@
-﻿using System.Activities;
+﻿using AndroidAutomator.Properties;
+using System.Activities;
 using System.ComponentModel;
 using OpenQA.Selenium.Appium.Android;
 
 namespace AndroidAutomator.Activities
 {
-
+    [LocalizedDisplayName(nameof(Resources.GetTextActivityName))]
+    [LocalizedDescription(nameof(Resources.GetTextActivityDesc))]
     public class GetText : CodeActivity
     {
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.SelectorField))]
+        [LocalizedDescription(nameof(Resources.SelectorDesc))]
         public InArgument<string> Selector { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.ElementField))]
+        [LocalizedDescription(nameof(Resources.ElementDesc))]
         public InArgument<AndroidElement> Element { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.IndexField))]
+        [LocalizedDescription(nameof(Resources.IndexDesc))]
         public InArgument<int> Index { get; set; }
 
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.SelectTypeField))]
+        [LocalizedDescription(nameof(Resources.SelectTypeDesc))]
         [RequiredArgument]
         public SelectBy SelectType { get; set; }
 
-        [Category("Options")]
+        [LocalizedCategory(nameof(Resources.Options))]
+        [LocalizedDisplayName(nameof(Resources.MultipleElementsField))]
+        [LocalizedDescription(nameof(Resources.MultipleElementsDesc))]
         public bool MultipleElements { get; set; }
 
-        [Category("Output")]
+        [LocalizedCategory(nameof(Resources.Output))]
+        [LocalizedDisplayName(nameof(Resources.TextField))]
+        [LocalizedDescription(nameof(Resources.GetTextDesc))]
         public OutArgument<string> Text { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

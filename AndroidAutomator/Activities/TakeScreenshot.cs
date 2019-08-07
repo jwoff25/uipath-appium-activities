@@ -5,17 +5,23 @@ using System.ComponentModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
-using System;
+using AndroidAutomator.Properties;
 
 namespace AndroidAutomator.Activities
 {
+    [LocalizedDisplayName(nameof(Resources.TakeScreenshotActivityName))]
+    [LocalizedDescription(nameof(Resources.TakeScreenshotActivityDesc))]
     public class TakeScreenshot : CodeActivity
     {
-        [Category("Input")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.FilenameField))]
+        [LocalizedDescription(nameof(Resources.FilenameDesc))]
         [RequiredArgument]
         public InArgument<string> Filename { get; set; }
 
-        [Category("Options")]
+        [LocalizedCategory(nameof(Resources.Options))]
+        [LocalizedDisplayName(nameof(Resources.DelayField))]
+        [LocalizedDescription(nameof(Resources.DelayDesc))]
         public InArgument<int> Delay { get; set; } = 1000;
 
         // Add wait for element 
