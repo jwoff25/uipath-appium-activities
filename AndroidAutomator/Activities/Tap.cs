@@ -57,6 +57,11 @@ namespace AndroidAutomator.Activities
         [LocalizedDescription(nameof(Resources.YDesc))]
         public InArgument<int> Y { get; set; }
 
+        [LocalizedCategory(nameof(Resources.AndroidDriver))]
+        [LocalizedDisplayName(nameof(Resources.DriverField))]
+        [LocalizedDescription(nameof(Resources.AndroidDriverDesc))]
+        public InArgument<AndroidDriver<AndroidElement>> Driver { get; set; }
+
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
@@ -92,8 +97,16 @@ namespace AndroidAutomator.Activities
 
         protected override void Execute(CodeActivityContext context)
         {
-            // Inherit driver from scope activity
-            var driver = context.DataContext.GetProperties()["Driver"].GetValue(context.DataContext) as AndroidDriver<AndroidElement>;
+            AndroidDriver<AndroidElement> driver;
+            // Inherit driver from scope activity OR from input (if out of context)
+            try
+            {
+                driver = context.DataContext.GetProperties()["Driver"].GetValue(context.DataContext) as AndroidDriver<AndroidElement>;
+            }
+            catch
+            {
+                driver = Driver.Get(context);
+            }
 
             // Get delay
             int delay = Delay.Get(context);

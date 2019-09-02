@@ -61,6 +61,24 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Android Driver.
+        /// </summary>
+        internal static string AndroidDriver {
+            get {
+                return ResourceManager.GetString("AndroidDriver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Android Driver to execute commands outside of Android Activity Scope..
+        /// </summary>
+        internal static string AndroidDriverDesc {
+            get {
+                return ResourceManager.GetString("AndroidDriverDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version of Android device..
         /// </summary>
         internal static string AndroidVersionDesc {
@@ -201,6 +219,24 @@ namespace AndroidAutomator.Properties {
         internal static string Do {
             get {
                 return ResourceManager.GetString("Do", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output Android Driver to pass to activities outside of scope..
+        /// </summary>
+        internal static string DriverDesc {
+            get {
+                return ResourceManager.GetString("DriverDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Driver.
+        /// </summary>
+        internal static string DriverField {
+            get {
+                return ResourceManager.GetString("DriverField", resourceCulture);
             }
         }
         

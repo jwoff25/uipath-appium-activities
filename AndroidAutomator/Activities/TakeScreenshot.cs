@@ -24,12 +24,25 @@ namespace AndroidAutomator.Activities
         [LocalizedDescription(nameof(Resources.DelayDesc))]
         public InArgument<int> Delay { get; set; } = 1000;
 
+        [LocalizedCategory(nameof(Resources.AndroidDriver))]
+        [LocalizedDisplayName(nameof(Resources.DriverField))]
+        [LocalizedDescription(nameof(Resources.AndroidDriverDesc))]
+        public InArgument<AndroidDriver<AndroidElement>> Driver { get; set; }
+
         // Add wait for element 
 
         protected override void Execute(CodeActivityContext context)
         {
-            // Inherit driver from scope activity
-            var driver = context.DataContext.GetProperties()["Driver"].GetValue(context.DataContext) as AndroidDriver<AndroidElement>;
+            AndroidDriver<AndroidElement> driver;
+            // Inherit driver from scope activity OR from input (if out of context)
+            try
+            {
+                driver = context.DataContext.GetProperties()["Driver"].GetValue(context.DataContext) as AndroidDriver<AndroidElement>;
+            }
+            catch
+            {
+                driver = Driver.Get(context);
+            }
 
             // Receive fields
             string filename = Filename.Get(context);

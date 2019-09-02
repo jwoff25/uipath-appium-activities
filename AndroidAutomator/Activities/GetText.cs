@@ -35,6 +35,11 @@ namespace AndroidAutomator.Activities
         [LocalizedDescription(nameof(Resources.MultipleElementsDesc))]
         public bool MultipleElements { get; set; }
 
+        [LocalizedCategory(nameof(Resources.AndroidDriver))]
+        [LocalizedDisplayName(nameof(Resources.DriverField))]
+        [LocalizedDescription(nameof(Resources.AndroidDriverDesc))]
+        public InArgument<AndroidDriver<AndroidElement>> Driver { get; set; }
+
         [LocalizedCategory(nameof(Resources.Output))]
         [LocalizedDisplayName(nameof(Resources.TextField))]
         [LocalizedDescription(nameof(Resources.GetTextDesc))]
@@ -60,8 +65,16 @@ namespace AndroidAutomator.Activities
 
         protected override void Execute(CodeActivityContext context)
         {
-            // Inherit driver from scope activity
-            var driver = context.DataContext.GetProperties()["Driver"].GetValue(context.DataContext) as AndroidDriver<AndroidElement>;
+            AndroidDriver<AndroidElement> driver;
+            // Inherit driver from scope activity OR from input (if out of context)
+            try
+            {
+                driver = context.DataContext.GetProperties()["Driver"].GetValue(context.DataContext) as AndroidDriver<AndroidElement>;
+            }
+            catch
+            {
+                driver = Driver.Get(context);
+            }
 
             // Receive fields
             string selector = Selector.Get(context);

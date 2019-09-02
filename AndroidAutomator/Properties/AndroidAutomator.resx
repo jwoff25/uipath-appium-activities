@@ -363,4 +363,16 @@
   <data name="YField" xml:space="preserve">
     <value>Y</value>
   </data>
+  <data name="AndroidDriver" xml:space="preserve">
+    <value>Android Driver</value>
+  </data>
+  <data name="AndroidDriverDesc" xml:space="preserve">
+    <value>Android Driver to execute commands outside of Android Activity Scope.</value>
+  </data>
+  <data name="DriverDesc" xml:space="preserve">
+    <value>Output Android Driver to pass to activities outside of scope.</value>
+  </data>
+  <data name="DriverField" xml:space="preserve">
+    <value>Driver</value>
+  </data>
 </root>

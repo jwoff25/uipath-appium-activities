@@ -69,6 +69,11 @@ namespace AndroidAutomator.Activities
         [LocalizedDescription(nameof(Resources.ScreenshotPathDesc))]
         public InArgument<string> ScreenshotPath { get; set; }
 
+        [LocalizedCategory(nameof(Resources.Output))]
+        [LocalizedDisplayName(nameof(Resources.DriverField))]
+        [LocalizedDescription(nameof(Resources.DriverDesc))]
+        public OutArgument<AndroidDriver<AndroidElement>> Driver { get; set; }
+
         public AndroidEmulatorScope()
         {
             Body = new ActivityAction<AndroidDriver<AndroidElement>>
@@ -117,6 +122,9 @@ namespace AndroidAutomator.Activities
 
             driver = new AndroidDriver<AndroidElement>(server, options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(waitTime);
+
+            // Export driver
+            Driver.Set(context, driver);
 
             // Schedule Activities
             if (Body != null)
