@@ -16,7 +16,6 @@ namespace AndroidAutomator.Activities
     public class AndroidEmulatorScope : NativeActivity
     {
         [Browsable(false)]
-
         public ActivityAction<AndroidDriver<AndroidElement>> Body { get; set; }
 
         [LocalizedCategory(nameof(Resources.App))]
@@ -113,6 +112,8 @@ namespace AndroidAutomator.Activities
             options.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, version);
             options.AddAdditionalCapability(MobileCapabilityType.Locale, locale);
             options.AddAdditionalCapability(MobileCapabilityType.Language, language);
+            // Use UIAutomator2 for better performance
+            options.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.AndroidUIAutomator2);
             //App capabilities
             options.AddAdditionalCapability(MobileCapabilityType.App, apkPath);
             options.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, package);

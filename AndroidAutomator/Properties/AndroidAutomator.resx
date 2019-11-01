@@ -343,7 +343,7 @@
     <value>Force the process to wait for a certain element to appear; based on ID, Class or XPath.</value>
   </data>
   <data name="WaitForElementActivityName" xml:space="preserve">
-    <value>Wait for Activity</value>
+    <value>Wait for Element</value>
   </data>
   <data name="WaitTimeDesc" xml:space="preserve">
     <value>Default amount of time the program will wait for elements to appear.</value>
@@ -374,5 +374,17 @@
   </data>
   <data name="DriverField" xml:space="preserve">
     <value>Driver</value>
+  </data>
+  <data name="CloseAppActivityDesc" xml:space="preserve">
+    <value>Close application in current session.</value>
+  </data>
+  <data name="CloseAppActivityName" xml:space="preserve">
+    <value>Close App</value>
+  </data>
+  <data name="QuitDriverActivityDesc" xml:space="preserve">
+    <value>Quit Appium driver for current session.</value>
+  </data>
+  <data name="QuitDriverActivityName" xml:space="preserve">
+    <value>Quit Driver</value>
   </data>
 </root>

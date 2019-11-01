@@ -79,6 +79,7 @@
       <DependentUpon>AndroidAutomator.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Utilities\QuitDriver.cs" />
     <Compile Include="Utilities\FindElement.cs" />
     <Compile Include="AndroidEmulatorScopeDesigner.xaml.cs">
       <DependentUpon>AndroidEmulatorScopeDesigner.xaml</DependentUpon>
@@ -94,6 +95,7 @@
     <Compile Include="Activities\TakeScreenshot.cs" />
     <Compile Include="Activities\Tap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\CloseApp.cs" />
     <Compile Include="Utilities\RunTest.cs" />
     <Compile Include="Utilities\WaitForElement.cs" />
   </ItemGroup>

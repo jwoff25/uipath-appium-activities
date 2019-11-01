@@ -36,7 +36,7 @@ namespace AndroidAutomator.Utilities
         [LocalizedDescription(nameof(Resources.MultipleElementsDesc))]
         public bool MultipleElements { get; set; }
 
-        [LocalizedCategory(nameof(Resources.Options))]
+        [LocalizedCategory(nameof(Resources.Output))]
         [LocalizedDisplayName(nameof(Resources.ElementField))]
         [LocalizedDescription(nameof(Resources.ElementDesc))]
         public OutArgument<AndroidElement> Element { get; set; }
@@ -76,7 +76,7 @@ namespace AndroidAutomator.Utilities
             {
                 driver = Driver.Get(context);
             }
-
+            
             // Gather fields
             string selector = Selector.Get(context);
             int index = Index.Get(context);

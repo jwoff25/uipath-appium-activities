@@ -160,6 +160,24 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close application in current session..
+        /// </summary>
+        internal static string CloseAppActivityDesc {
+            get {
+                return ResourceManager.GetString("CloseAppActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close App.
+        /// </summary>
+        internal static string CloseAppActivityName {
+            get {
+                return ResourceManager.GetString("CloseAppActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Coordinates.
         /// </summary>
         internal static string Coordinates {
@@ -547,6 +565,24 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quit Appium driver for current session..
+        /// </summary>
+        internal static string QuitDriverActivityDesc {
+            get {
+                return ResourceManager.GetString("QuitDriverActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quit Driver.
+        /// </summary>
+        internal static string QuitDriverActivityName {
+            get {
+                return ResourceManager.GetString("QuitDriverActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scope activity for Android Automation. All other activities must be placed within this scope. Parameters for the target Android Device and application can be set here, as well as other options like the root file path for screenshots and Language/Locale..
         /// </summary>
         internal static string ScopeActivityDesc {
@@ -772,7 +808,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wait for Activity.
+        ///   Looks up a localized string similar to Wait for Element.
         /// </summary>
         internal static string WaitForElementActivityName {
             get {
