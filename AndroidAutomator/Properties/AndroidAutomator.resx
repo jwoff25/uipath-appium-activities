@@ -148,10 +148,10 @@
     <value>Coordinates</value>
   </data>
   <data name="DelayDesc" xml:space="preserve">
-    <value>Time to wait before action is performed (in milliseconds).</value>
+    <value>Time to wait before action is performed in milliseconds.</value>
   </data>
   <data name="DelayField" xml:space="preserve">
-    <value>Delay</value>
+    <value>DelayBefore</value>
   </data>
   <data name="Device" xml:space="preserve">
     <value>Device</value>
@@ -166,7 +166,7 @@
     <value>Do</value>
   </data>
   <data name="ElementDesc" xml:space="preserve">
-    <value>&lt;AndroidElement&gt; object for target UI element.</value>
+    <value>Object for target UI element.</value>
   </data>
   <data name="ElementField" xml:space="preserve">
     <value>Element</value>
@@ -196,13 +196,13 @@
     <value>Time to wait for target element to appear.</value>
   </data>
   <data name="FilenameDesc" xml:space="preserve">
-    <value>Filename of screenshot.</value>
+    <value>Filename of screenshot. If none is provided, the filename will default to "capture.png".</value>
   </data>
   <data name="FilenameField" xml:space="preserve">
     <value>Filename</value>
   </data>
   <data name="FindElementActivityDesc" xml:space="preserve">
-    <value>Find an element based on ID, Class, or XPath and return the element as an &lt;AndroidElement&gt; object.</value>
+    <value>Find an element based on ID, Class, or XPath and return the element.</value>
   </data>
   <data name="FindElementActivityName" xml:space="preserve">
     <value>Find Element</value>
@@ -217,7 +217,7 @@
     <value>Text extracted from UI element.</value>
   </data>
   <data name="IndexDesc" xml:space="preserve">
-    <value>Index of UI element within a list of elements (only relevant when using MultipleElements).</value>
+    <value>Index of UI element within a list of elements. Only relevant when using MultipleElements.</value>
   </data>
   <data name="IndexField" xml:space="preserve">
     <value>Index</value>
@@ -250,7 +250,7 @@
     <value>Long Press</value>
   </data>
   <data name="MultipleElementsDesc" xml:space="preserve">
-    <value>Set to true if Selector is expected to return multiple elements (eg. using a Class selector will most likely return multiple elements).</value>
+    <value>Select checkbox if Selector is expected to return multiple elements (eg. using a Class selector will most likely return multiple elements). If selected, the Index property must be entered.</value>
   </data>
   <data name="MultipleElementsField" xml:space="preserve">
     <value>MultipleElements</value>
@@ -262,13 +262,13 @@
     <value>Output</value>
   </data>
   <data name="ParentDesc" xml:space="preserve">
-    <value>&lt;AndroidElement&gt; object containing the target UI element as a child.</value>
+    <value>Object containing the target UI element as a child.</value>
   </data>
   <data name="ParentField" xml:space="preserve">
     <value>Parent</value>
   </data>
   <data name="ScopeActivityDesc" xml:space="preserve">
-    <value>Scope activity for Android Automation. All other activities must be placed within this scope. Parameters for the target Android Device and application can be set here, as well as other options like the root file path for screenshots and Language/Locale.</value>
+    <value>Scope activity for Android Automation. All other Android activities can be placed within this scope to run them. If the activities are to be used outsid of the scope, the Driver field can be used to output the Android Driver which can the be passed into other Android Activities. Parameters for the target Android Device and application/browser can be set here, as well as other options like the root file path for screenshots and Language/Locale.</value>
   </data>
   <data name="ScopeActivityName" xml:space="preserve">
     <value>Android Activity Scope</value>
@@ -289,7 +289,7 @@
     <value>Set type of selector (ID, Class, or XPath).</value>
   </data>
   <data name="SelectTypeField" xml:space="preserve">
-    <value>SelectType</value>
+    <value>SelectorType</value>
   </data>
   <data name="StartXDesc" xml:space="preserve">
     <value>X coordinate for swipe origin.</value>
@@ -310,10 +310,10 @@
     <value>Swipe</value>
   </data>
   <data name="TakeScreenshotActivityDesc" xml:space="preserve">
-    <value>Take a screenshot of the current screen and save it based on the ScreenshotPath property from the scope activity.</value>
+    <value>Take a screenshot of the current screen and save it based on the ScreenshotPath property from the Scope activity. Note: if a file of the same name exists, that file is overwritten without warning.</value>
   </data>
   <data name="TakeScreenshotActivityName" xml:space="preserve">
-    <value>TakeScreenshot</value>
+    <value>Take Screenshot</value>
   </data>
   <data name="TapActivityDesc" xml:space="preserve">
     <value>Tap on a UI element or coordinates.</value>
@@ -346,7 +346,7 @@
     <value>Wait for Element</value>
   </data>
   <data name="WaitTimeDesc" xml:space="preserve">
-    <value>Default amount of time the program will wait for elements to appear.</value>
+    <value>Default amount of time (in seconds) the program will wait for elements to appear.</value>
   </data>
   <data name="WaitTimeField" xml:space="preserve">
     <value>WaitTime</value>
@@ -364,13 +364,13 @@
     <value>Y</value>
   </data>
   <data name="AndroidDriver" xml:space="preserve">
-    <value>Android Driver</value>
+    <value>Appium Driver</value>
   </data>
   <data name="AndroidDriverDesc" xml:space="preserve">
-    <value>Android Driver to execute commands outside of Android Activity Scope.</value>
+    <value>Appium Driver to execute commands outside of Android Activity Scope.</value>
   </data>
   <data name="DriverDesc" xml:space="preserve">
-    <value>Output Android Driver to pass to activities outside of scope.</value>
+    <value>Output Appium Driver to pass to activities outside of scope.</value>
   </data>
   <data name="DriverField" xml:space="preserve">
     <value>Driver</value>
@@ -386,5 +386,56 @@
   </data>
   <data name="QuitDriverActivityName" xml:space="preserve">
     <value>Quit Driver</value>
+  </data>
+  <data name="BackActivityDesc" xml:space="preserve">
+    <value>Navigate backwards in the browser history (if possible).</value>
+  </data>
+  <data name="BackActivityName" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Browser" xml:space="preserve">
+    <value>Browser</value>
+  </data>
+  <data name="BrowserTypeDesc" xml:space="preserve">
+    <value>Type of browser that will be launched.</value>
+  </data>
+  <data name="BrowserTypeField" xml:space="preserve">
+    <value>BrowserType</value>
+  </data>
+  <data name="ChromedriverPathDesc" xml:space="preserve">
+    <value>Path to Chromedriver executable. If not provided, whatever version is installed with Appium will be used. Note: if the default version is used, there is a possibility that it will not be compatible to the version of Chrome on your Android device, which will cause the workflow to fail. For more info, go to http://appium.io/docs/en/writing-running-appium/web/chromedriver .</value>
+  </data>
+  <data name="ChromedriverPathField" xml:space="preserve">
+    <value>ChromedriverPath</value>
+  </data>
+  <data name="ForwardActivityDesc" xml:space="preserve">
+    <value>Navigate forwards in the browser history (if possible).</value>
+  </data>
+  <data name="ForwardActivityName" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="GoToURLActivityDesc" xml:space="preserve">
+    <value>Navigate to a new URL. </value>
+  </data>
+  <data name="GoToURLActivityName" xml:space="preserve">
+    <value>Go to URL</value>
+  </data>
+  <data name="LaunchTypeDesc" xml:space="preserve">
+    <value>Specify whether an app or a web browser should be launched.</value>
+  </data>
+  <data name="LaunchTypeField" xml:space="preserve">
+    <value>LaunchType</value>
+  </data>
+  <data name="RefreshActivityDesc" xml:space="preserve">
+    <value>Refresh the browser page.</value>
+  </data>
+  <data name="RefreshActivityName" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="URLFieldDesc" xml:space="preserve">
+    <value>URL of the website.</value>
+  </data>
+  <data name="URLFieldName" xml:space="preserve">
+    <value>URL</value>
   </data>
 </root>

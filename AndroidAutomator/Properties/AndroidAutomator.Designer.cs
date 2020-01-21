@@ -61,7 +61,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Android Driver.
+        ///   Looks up a localized string similar to Appium Driver.
         /// </summary>
         internal static string AndroidDriver {
             get {
@@ -70,7 +70,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Android Driver to execute commands outside of Android Activity Scope..
+        ///   Looks up a localized string similar to Appium Driver to execute commands outside of Android Activity Scope..
         /// </summary>
         internal static string AndroidDriverDesc {
             get {
@@ -160,6 +160,69 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Navigate backwards in the browser history (if possible)..
+        /// </summary>
+        internal static string BackActivityDesc {
+            get {
+                return ResourceManager.GetString("BackActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string BackActivityName {
+            get {
+                return ResourceManager.GetString("BackActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browser.
+        /// </summary>
+        internal static string Browser {
+            get {
+                return ResourceManager.GetString("Browser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of browser that will be launched..
+        /// </summary>
+        internal static string BrowserTypeDesc {
+            get {
+                return ResourceManager.GetString("BrowserTypeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BrowserType.
+        /// </summary>
+        internal static string BrowserTypeField {
+            get {
+                return ResourceManager.GetString("BrowserTypeField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Path to Chromedriver executable. If not provided, whatever version is installed with Appium will be used. Note: if the default version is used, there is a possibility that it will not be compatible to the version of Chrome on your Android device, which will cause the workflow to fail. For more info, go to http://appium.io/docs/en/writing-running-appium/web/chromedriver ..
+        /// </summary>
+        internal static string ChromedriverPathDesc {
+            get {
+                return ResourceManager.GetString("ChromedriverPathDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ChromedriverPath.
+        /// </summary>
+        internal static string ChromedriverPathField {
+            get {
+                return ResourceManager.GetString("ChromedriverPathField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close application in current session..
         /// </summary>
         internal static string CloseAppActivityDesc {
@@ -187,7 +250,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Time to wait before action is performed (in milliseconds)..
+        ///   Looks up a localized string similar to Time to wait before action is performed in milliseconds..
         /// </summary>
         internal static string DelayDesc {
             get {
@@ -196,7 +259,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delay.
+        ///   Looks up a localized string similar to DelayBefore.
         /// </summary>
         internal static string DelayField {
             get {
@@ -241,7 +304,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Output Android Driver to pass to activities outside of scope..
+        ///   Looks up a localized string similar to Output Appium Driver to pass to activities outside of scope..
         /// </summary>
         internal static string DriverDesc {
             get {
@@ -259,7 +322,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;AndroidElement&gt; object for target UI element..
+        ///   Looks up a localized string similar to Object for target UI element..
         /// </summary>
         internal static string ElementDesc {
             get {
@@ -349,7 +412,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filename of screenshot..
+        ///   Looks up a localized string similar to Filename of screenshot. If none is provided, the filename will default to &quot;capture.png&quot;..
         /// </summary>
         internal static string FilenameDesc {
             get {
@@ -367,7 +430,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Find an element based on ID, Class, or XPath and return the element as an &lt;AndroidElement&gt; object..
+        ///   Looks up a localized string similar to Find an element based on ID, Class, or XPath and return the element..
         /// </summary>
         internal static string FindElementActivityDesc {
             get {
@@ -381,6 +444,24 @@ namespace AndroidAutomator.Properties {
         internal static string FindElementActivityName {
             get {
                 return ResourceManager.GetString("FindElementActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Navigate forwards in the browser history (if possible)..
+        /// </summary>
+        internal static string ForwardActivityDesc {
+            get {
+                return ResourceManager.GetString("ForwardActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forward.
+        /// </summary>
+        internal static string ForwardActivityName {
+            get {
+                return ResourceManager.GetString("ForwardActivityName", resourceCulture);
             }
         }
         
@@ -412,7 +493,25 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Index of UI element within a list of elements (only relevant when using MultipleElements)..
+        ///   Looks up a localized string similar to Navigate to a new URL. .
+        /// </summary>
+        internal static string GoToURLActivityDesc {
+            get {
+                return ResourceManager.GetString("GoToURLActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to URL.
+        /// </summary>
+        internal static string GoToURLActivityName {
+            get {
+                return ResourceManager.GetString("GoToURLActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index of UI element within a list of elements. Only relevant when using MultipleElements..
         /// </summary>
         internal static string IndexDesc {
             get {
@@ -475,6 +574,24 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specify whether an app or a web browser should be launched..
+        /// </summary>
+        internal static string LaunchTypeDesc {
+            get {
+                return ResourceManager.GetString("LaunchTypeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LaunchType.
+        /// </summary>
+        internal static string LaunchTypeField {
+            get {
+                return ResourceManager.GetString("LaunchTypeField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set device locale, paired with Language..
         /// </summary>
         internal static string LocaleDesc {
@@ -511,7 +628,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set to true if Selector is expected to return multiple elements (eg. using a Class selector will most likely return multiple elements)..
+        ///   Looks up a localized string similar to Select checkbox if Selector is expected to return multiple elements (eg. using a Class selector will most likely return multiple elements). If selected, the Index property must be entered..
         /// </summary>
         internal static string MultipleElementsDesc {
             get {
@@ -547,7 +664,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;AndroidElement&gt; object containing the target UI element as a child..
+        ///   Looks up a localized string similar to Object containing the target UI element as a child..
         /// </summary>
         internal static string ParentDesc {
             get {
@@ -583,7 +700,25 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scope activity for Android Automation. All other activities must be placed within this scope. Parameters for the target Android Device and application can be set here, as well as other options like the root file path for screenshots and Language/Locale..
+        ///   Looks up a localized string similar to Refresh the browser page..
+        /// </summary>
+        internal static string RefreshActivityDesc {
+            get {
+                return ResourceManager.GetString("RefreshActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh.
+        /// </summary>
+        internal static string RefreshActivityName {
+            get {
+                return ResourceManager.GetString("RefreshActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scope activity for Android Automation. All other Android activities can be placed within this scope to run them. If the activities are to be used outsid of the scope, the Driver field can be used to output the Android Driver which can the be passed into other Android Activities. Parameters for the target Android Device and application/browser can be set here, as well as other options like the root file path for screenshots and Language/Locale..
         /// </summary>
         internal static string ScopeActivityDesc {
             get {
@@ -646,7 +781,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SelectType.
+        ///   Looks up a localized string similar to SelectorType.
         /// </summary>
         internal static string SelectTypeField {
             get {
@@ -709,7 +844,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Take a screenshot of the current screen and save it based on the ScreenshotPath property from the scope activity..
+        ///   Looks up a localized string similar to Take a screenshot of the current screen and save it based on the ScreenshotPath property from the Scope activity. Note: if a file of the same name exists, that file is overwritten without warning..
         /// </summary>
         internal static string TakeScreenshotActivityDesc {
             get {
@@ -718,7 +853,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TakeScreenshot.
+        ///   Looks up a localized string similar to Take Screenshot.
         /// </summary>
         internal static string TakeScreenshotActivityName {
             get {
@@ -781,6 +916,24 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to URL of the website..
+        /// </summary>
+        internal static string URLFieldDesc {
+            get {
+                return ResourceManager.GetString("URLFieldDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL.
+        /// </summary>
+        internal static string URLFieldName {
+            get {
+                return ResourceManager.GetString("URLFieldName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to When True, (X, Y) coordinates are used instead of Element/Selector..
         /// </summary>
         internal static string UseCoordinatesDesc {
@@ -817,7 +970,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Default amount of time the program will wait for elements to appear..
+        ///   Looks up a localized string similar to Default amount of time (in seconds) the program will wait for elements to appear..
         /// </summary>
         internal static string WaitTimeDesc {
             get {

@@ -157,7 +157,14 @@ namespace AndroidAutomator.Activities
                 Thread.Sleep(delay);
 
                 // Tap on the element
-                new TouchAction(driver).Tap(element).Perform();
+                if (driver.IsBrowser)
+                {
+                    element.Click();
+                }
+                else
+                {
+                    new TouchAction(driver).Tap(element).Perform();
+                }
             }
         }
     }

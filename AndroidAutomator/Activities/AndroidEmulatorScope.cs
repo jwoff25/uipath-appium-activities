@@ -18,12 +18,6 @@ namespace AndroidAutomator.Activities
         [Browsable(false)]
         public ActivityAction<AndroidDriver<AndroidElement>> Body { get; set; }
 
-        [LocalizedCategory(nameof(Resources.App))]
-        [LocalizedDisplayName(nameof(Resources.ApkPathField))]
-        [LocalizedDescription(nameof(Resources.ApkPathDesc))]
-        [RequiredArgument]
-        public InArgument<string> ApkPath { get; set; }
-
         [LocalizedCategory(nameof(Resources.Device))]
         [LocalizedDisplayName(nameof(Resources.DeviceNameField))]
         [LocalizedDescription(nameof(Resources.DeviceNameDesc))]
@@ -37,15 +31,18 @@ namespace AndroidAutomator.Activities
         public InArgument<string> AndroidVersion { get; set; }
 
         [LocalizedCategory(nameof(Resources.App))]
+        [LocalizedDisplayName(nameof(Resources.ApkPathField))]
+        [LocalizedDescription(nameof(Resources.ApkPathDesc))]
+        public InArgument<string> ApkPath { get; set; }
+
+        [LocalizedCategory(nameof(Resources.App))]
         [LocalizedDisplayName(nameof(Resources.AppPackageField))]
         [LocalizedDescription(nameof(Resources.AppPackageDesc))]
-        [RequiredArgument]
         public InArgument<string> AppPackage { get; set; }
 
         [LocalizedCategory(nameof(Resources.App))]
         [LocalizedDisplayName(nameof(Resources.AppActivityField))]
         [LocalizedDescription(nameof(Resources.AppActivityDesc))]
-        [RequiredArgument]
         public InArgument<string> AppActivity { get; set; }
 
         [LocalizedCategory(nameof(Resources.Options))]
@@ -68,6 +65,22 @@ namespace AndroidAutomator.Activities
         [LocalizedDescription(nameof(Resources.ScreenshotPathDesc))]
         public InArgument<string> ScreenshotPath { get; set; }
 
+        [LocalizedCategory(nameof(Resources.Options))]
+        [LocalizedDisplayName(nameof(Resources.LaunchTypeField))]
+        [LocalizedDescription(nameof(Resources.LaunchTypeDesc))]
+        [RequiredArgument]
+        public LaunchType LaunchType { get; set; }
+
+        [LocalizedCategory(nameof(Resources.Browser))]
+        [LocalizedDisplayName(nameof(Resources.ChromedriverPathField))]
+        [LocalizedDescription(nameof(Resources.ChromedriverPathDesc))]
+        public InArgument<string> ChromedriverPath { get; set; }
+
+        [LocalizedCategory(nameof(Resources.Browser))]
+        [LocalizedDisplayName(nameof(Resources.BrowserTypeField))]
+        [LocalizedDescription(nameof(Resources.BrowserTypeDesc))]
+        public BrowserType BrowserType { get; set; }
+
         [LocalizedCategory(nameof(Resources.Output))]
         [LocalizedDisplayName(nameof(Resources.DriverField))]
         [LocalizedDescription(nameof(Resources.DriverDesc))]
@@ -82,6 +95,18 @@ namespace AndroidAutomator.Activities
             };
         }
 
+        protected override void CacheMetadata(NativeActivityMetadata metadata)
+        {
+            base.CacheMetadata(metadata);
+            if (LaunchType == LaunchType.App)
+            {
+                if (ApkPath == null || AppPackage == null || AppActivity == null)
+                {
+                    metadata.AddValidationError("If LaunchType is App, then the following fields need to be filled in: ApkPath, AppPackage, AppActivity.");
+                }
+            }
+        }
+
         protected override void Execute(NativeActivityContext context)
         {
             // Gather fields
@@ -94,7 +119,7 @@ namespace AndroidAutomator.Activities
             string language = Language.Get(context) ?? "en";
             int waitTime = WaitTime.Get(context);
             string screenshotPath = ScreenshotPath.Get(context) ?? "";
-
+            string chromedriverPath = ChromedriverPath.Get(context) ?? "";
 
             // Initialize Driver and Appium Server
             AndroidDriver<AndroidElement> driver;
@@ -114,10 +139,30 @@ namespace AndroidAutomator.Activities
             options.AddAdditionalCapability(MobileCapabilityType.Language, language);
             // Use UIAutomator2 for better performance
             options.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.AndroidUIAutomator2);
-            //App capabilities
-            options.AddAdditionalCapability(MobileCapabilityType.App, apkPath);
-            options.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, package);
-            options.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, activity);
+            switch(LaunchType)
+            {
+                case LaunchType.App:
+                    //App capabilities
+                    options.AddAdditionalCapability(MobileCapabilityType.App, apkPath);
+                    options.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, package);
+                    options.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, activity);
+                    break;
+                case LaunchType.Browser:
+                    //Browser capabilities
+                    switch (BrowserType)
+                    {
+                        case BrowserType.Chrome:
+                            options.AddAdditionalCapability(MobileCapabilityType.BrowserName, MobileBrowserType.Chrome);
+                            if (!String.IsNullOrEmpty(chromedriverPath))
+                                options.AddAdditionalCapability(AndroidMobileCapabilityType.ChromedriverExecutable, chromedriverPath);
+                            break;
+                        default:
+                            throw new ArgumentNullException("Missing Argument: BrowserType");
+                    }
+                    break;
+                default:
+                    throw new ArgumentNullException("Missing Argument: LaunchType");
+            }
             //Default Screenshot Path
             options.AddAdditionalCapability(AndroidMobileCapabilityType.AndroidScreenshotPath, screenshotPath);
 
@@ -141,7 +186,7 @@ namespace AndroidAutomator.Activities
 
         private void OnCompleted(NativeActivityContext context, ActivityInstance completedInstance)
         {
-            //TODO
+            
         }
     }
 }

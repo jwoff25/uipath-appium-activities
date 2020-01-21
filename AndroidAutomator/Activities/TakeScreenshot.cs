@@ -16,7 +16,6 @@ namespace AndroidAutomator.Activities
         [LocalizedCategory(nameof(Resources.Input))]
         [LocalizedDisplayName(nameof(Resources.FilenameField))]
         [LocalizedDescription(nameof(Resources.FilenameDesc))]
-        [RequiredArgument]
         public InArgument<string> Filename { get; set; }
 
         [LocalizedCategory(nameof(Resources.Options))]
@@ -45,7 +44,7 @@ namespace AndroidAutomator.Activities
             }
 
             // Receive fields
-            string filename = Filename.Get(context);
+            string filename = Filename.Get(context) ?? "capture";
             int delay = Delay.Get(context);
 
             // Set up path

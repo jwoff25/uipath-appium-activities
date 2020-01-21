@@ -71,7 +71,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\AndroidEmulatorScope.cs" />
+    <Compile Include="Activities\Browser\Forward.cs" />
+    <Compile Include="Activities\Browser\Back.cs" />
+    <Compile Include="Activities\Browser\Refresh.cs" />
+    <Compile Include="Activities\Browser\GoToURL.cs" />
     <Compile Include="Activities\LongPress.cs" />
+    <Compile Include="Enums\BrowserType.cs" />
+    <Compile Include="Enums\LaunchType.cs" />
     <Compile Include="Localization.cs" />
     <Compile Include="Properties\AndroidAutomator.Designer.cs">
       <AutoGen>True</AutoGen>
