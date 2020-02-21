@@ -124,7 +124,7 @@
     <value>AndroidVersion</value>
   </data>
   <data name="ApkPathDesc" xml:space="preserve">
-    <value>Path to target APK file.</value>
+    <value>Path to target APK file. Only required if app is not already installed on target device.</value>
   </data>
   <data name="ApkPathField" xml:space="preserve">
     <value>APKFilePath</value>
@@ -286,7 +286,7 @@
     <value>Selector</value>
   </data>
   <data name="SelectTypeDesc" xml:space="preserve">
-    <value>Set type of selector (ID, Class, or XPath).</value>
+    <value>Type of selector to extract target UI element (ID, Class, XPath, or Text).</value>
   </data>
   <data name="SelectTypeField" xml:space="preserve">
     <value>SelectorType</value>
@@ -393,6 +393,18 @@
   <data name="BackActivityName" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="BackgroundAppActivityDesc" xml:space="preserve">
+    <value>Send current app to the background for a specified amount of time. </value>
+  </data>
+  <data name="BackgroundAppActivityName" xml:space="preserve">
+    <value>Background App</value>
+  </data>
+  <data name="BackgroundTimeoutDesc" xml:space="preserve">
+    <value>Number of seconds to background the app. Default value is -1, which will deactivate the app entirely.</value>
+  </data>
+  <data name="BackgroundTimeoutField" xml:space="preserve">
+    <value>Timeout</value>
+  </data>
   <data name="Browser" xml:space="preserve">
     <value>Browser</value>
   </data>
@@ -420,6 +432,18 @@
   <data name="GoToURLActivityName" xml:space="preserve">
     <value>Go to URL</value>
   </data>
+  <data name="InstallAppActivityDesc" xml:space="preserve">
+    <value>Install app onto device from APK file.</value>
+  </data>
+  <data name="InstallAppActivityName" xml:space="preserve">
+    <value>Install App</value>
+  </data>
+  <data name="LaunchAppActivityDesc" xml:space="preserve">
+    <value>Launch recently closed/backgrounded app.</value>
+  </data>
+  <data name="LaunchAppActivityName" xml:space="preserve">
+    <value>Launch App</value>
+  </data>
   <data name="LaunchTypeDesc" xml:space="preserve">
     <value>Specify whether an app or a web browser should be launched.</value>
   </data>
@@ -432,10 +456,34 @@
   <data name="RefreshActivityName" xml:space="preserve">
     <value>Refresh</value>
   </data>
+  <data name="StartActivityActivityDesc" xml:space="preserve">
+    <value>Start an Android activity using the package and activity name.</value>
+  </data>
+  <data name="StartActivityActivityName" xml:space="preserve">
+    <value>Start Activity</value>
+  </data>
   <data name="URLFieldDesc" xml:space="preserve">
     <value>URL of the website.</value>
   </data>
   <data name="URLFieldName" xml:space="preserve">
     <value>URL</value>
+  </data>
+  <data name="ArgumentsDesc" xml:space="preserve">
+    <value>JSON serializable dictionary of arguments.</value>
+  </data>
+  <data name="ArgumentsField" xml:space="preserve">
+    <value>Arguments</value>
+  </data>
+  <data name="CommandNameDesc" xml:space="preserve">
+    <value>Name of mobile command. Syntax: "mobile: &lt;commandName&gt;"</value>
+  </data>
+  <data name="CommandNameField" xml:space="preserve">
+    <value>Command Name</value>
+  </data>
+  <data name="ExecuteScriptActivityDesc" xml:space="preserve">
+    <value>Execute a native mobile command.</value>
+  </data>
+  <data name="ExecuteScriptActivityName" xml:space="preserve">
+    <value>Execute Script</value>
   </data>
 </root>

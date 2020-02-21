@@ -97,7 +97,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Path to target APK file..
+        ///   Looks up a localized string similar to Path to target APK file. Only required if app is not already installed on target device..
         /// </summary>
         internal static string ApkPathDesc {
             get {
@@ -160,6 +160,24 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to JSON serializable dictionary of arguments..
+        /// </summary>
+        internal static string ArgumentsDesc {
+            get {
+                return ResourceManager.GetString("ArgumentsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arguments.
+        /// </summary>
+        internal static string ArgumentsField {
+            get {
+                return ResourceManager.GetString("ArgumentsField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Navigate backwards in the browser history (if possible)..
         /// </summary>
         internal static string BackActivityDesc {
@@ -174,6 +192,42 @@ namespace AndroidAutomator.Properties {
         internal static string BackActivityName {
             get {
                 return ResourceManager.GetString("BackActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send current app to the background for a specified amount of time. .
+        /// </summary>
+        internal static string BackgroundAppActivityDesc {
+            get {
+                return ResourceManager.GetString("BackgroundAppActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Background App.
+        /// </summary>
+        internal static string BackgroundAppActivityName {
+            get {
+                return ResourceManager.GetString("BackgroundAppActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of seconds to background the app. Default value is -1, which will deactivate the app entirely..
+        /// </summary>
+        internal static string BackgroundTimeoutDesc {
+            get {
+                return ResourceManager.GetString("BackgroundTimeoutDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timeout.
+        /// </summary>
+        internal static string BackgroundTimeoutField {
+            get {
+                return ResourceManager.GetString("BackgroundTimeoutField", resourceCulture);
             }
         }
         
@@ -237,6 +291,24 @@ namespace AndroidAutomator.Properties {
         internal static string CloseAppActivityName {
             get {
                 return ResourceManager.GetString("CloseAppActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of mobile command. Syntax: &quot;mobile: &lt;commandName&gt;&quot;.
+        /// </summary>
+        internal static string CommandNameDesc {
+            get {
+                return ResourceManager.GetString("CommandNameDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Command Name.
+        /// </summary>
+        internal static string CommandNameField {
+            get {
+                return ResourceManager.GetString("CommandNameField", resourceCulture);
             }
         }
         
@@ -403,6 +475,24 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Execute a native mobile command..
+        /// </summary>
+        internal static string ExecuteScriptActivityDesc {
+            get {
+                return ResourceManager.GetString("ExecuteScriptActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Execute Script.
+        /// </summary>
+        internal static string ExecuteScriptActivityName {
+            get {
+                return ResourceManager.GetString("ExecuteScriptActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Time to wait for target element to appear..
         /// </summary>
         internal static string ExplicitWaitDesc {
@@ -538,6 +628,24 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Install app onto device from APK file..
+        /// </summary>
+        internal static string InstallAppActivityDesc {
+            get {
+                return ResourceManager.GetString("InstallAppActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Install App.
+        /// </summary>
+        internal static string InstallAppActivityName {
+            get {
+                return ResourceManager.GetString("InstallAppActivityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Android toolbar button key..
         /// </summary>
         internal static string KeyCodeDesc {
@@ -570,6 +678,24 @@ namespace AndroidAutomator.Properties {
         internal static string LanguageField {
             get {
                 return ResourceManager.GetString("LanguageField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launch recently closed/backgrounded app..
+        /// </summary>
+        internal static string LaunchAppActivityDesc {
+            get {
+                return ResourceManager.GetString("LaunchAppActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launch App.
+        /// </summary>
+        internal static string LaunchAppActivityName {
+            get {
+                return ResourceManager.GetString("LaunchAppActivityName", resourceCulture);
             }
         }
         
@@ -772,7 +898,7 @@ namespace AndroidAutomator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set type of selector (ID, Class, or XPath)..
+        ///   Looks up a localized string similar to Type of selector to extract target UI element (ID, Class, XPath, or Text)..
         /// </summary>
         internal static string SelectTypeDesc {
             get {
@@ -786,6 +912,24 @@ namespace AndroidAutomator.Properties {
         internal static string SelectTypeField {
             get {
                 return ResourceManager.GetString("SelectTypeField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start an Android activity using the package and activity name..
+        /// </summary>
+        internal static string StartActivityActivityDesc {
+            get {
+                return ResourceManager.GetString("StartActivityActivityDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Activity.
+        /// </summary>
+        internal static string StartActivityActivityName {
+            get {
+                return ResourceManager.GetString("StartActivityActivityName", resourceCulture);
             }
         }
         

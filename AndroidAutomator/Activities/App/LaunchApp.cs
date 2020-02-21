@@ -1,13 +1,20 @@
-﻿using System.Activities;
+﻿using System;
 using AndroidAutomator.Properties;
+using System.Activities;
+using System.Activities.Statements;
+using System.ComponentModel;
+using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Appium.Enums;
+using OpenQA.Selenium.Appium.Service;
 
-namespace AndroidAutomator.Utilities
+namespace AndroidAutomator.Activities.App
 {
-    [LocalizedDisplayName(nameof(Resources.CloseAppActivityName))]
-    [LocalizedDescription(nameof(Resources.CloseAppActivityDesc))]
-    public class CloseApp : CodeActivity
+    [LocalizedDisplayName(nameof(Resources.LaunchAppActivityName))]
+    [LocalizedDescription(nameof(Resources.LaunchAppActivityDesc))]
+    public class LaunchApp : CodeActivity
     {
+
         [LocalizedCategory(nameof(Resources.AndroidDriver))]
         [LocalizedDisplayName(nameof(Resources.DriverField))]
         [LocalizedDescription(nameof(Resources.AndroidDriverDesc))]
@@ -26,8 +33,14 @@ namespace AndroidAutomator.Utilities
                 driver = Driver.Get(context);
             }
 
-            driver.CloseApp();
+            try
+            {
+                driver.LaunchApp();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
-
     }
 }

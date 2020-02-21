@@ -1,19 +1,19 @@
-﻿using System;
+﻿using System.Activities;
 using AndroidAutomator.Properties;
-using System.Activities;
-using System.Activities.Statements;
-using System.ComponentModel;
-using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.Enums;
-using OpenQA.Selenium.Appium.Service;
 
-namespace AndroidAutomator.Activities.Browser
+// Not working -- Fix later
+namespace AndroidAutomator.Activities.App
 {
-    [LocalizedDisplayName(nameof(Resources.RefreshActivityName))]
-    [LocalizedDescription(nameof(Resources.RefreshActivityDesc))]
-    public class Refresh : CodeActivity
+    [LocalizedDisplayName(nameof(Resources.BackgroundAppActivityName))]
+    [LocalizedDescription(nameof(Resources.BackgroundAppActivityDesc))]
+    class BackgroundApp : CodeActivity
     {
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.BackgroundTimeoutField))]
+        [LocalizedDescription(nameof(Resources.BackgroundTimeoutDesc))]
+        [RequiredArgument]
+        public InArgument<int> Timeout { get; set; } = -1;
 
         [LocalizedCategory(nameof(Resources.AndroidDriver))]
         [LocalizedDisplayName(nameof(Resources.DriverField))]
@@ -33,16 +33,10 @@ namespace AndroidAutomator.Activities.Browser
                 driver = Driver.Get(context);
             }
 
-            // Try to refresh
-            try
-            {
-                var nav = driver.Navigate();
-                nav.Refresh();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            int timeout = Timeout.Get(context);
+
+            driver.BackgroundApp(timeout);
         }
+
     }
 }

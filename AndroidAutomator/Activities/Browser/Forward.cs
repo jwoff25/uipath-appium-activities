@@ -32,7 +32,7 @@ namespace AndroidAutomator.Activities.Browser
                 driver = Driver.Get(context);
             }
 
-            // Try to go back
+            // Try to go forward
             try
             {
                 var nav = driver.Navigate();

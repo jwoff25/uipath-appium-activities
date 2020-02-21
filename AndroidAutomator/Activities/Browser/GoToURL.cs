@@ -17,6 +17,7 @@ namespace AndroidAutomator.Activities.Browser
         [LocalizedCategory(nameof(Resources.Input))]
         [LocalizedDisplayName(nameof(Resources.URLFieldName))]
         [LocalizedDescription(nameof(Resources.URLFieldDesc))]
+        [RequiredArgument]
         public InArgument<string> URL { get; set; }
 
         [LocalizedCategory(nameof(Resources.AndroidDriver))]

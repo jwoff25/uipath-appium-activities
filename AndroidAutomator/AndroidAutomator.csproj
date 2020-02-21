@@ -71,6 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\AndroidEmulatorScope.cs" />
+    <Compile Include="Activities\App\BackgroundApp.cs" />
+    <Compile Include="Activities\App\InstallApp.cs" />
+    <Compile Include="Activities\App\StartActivity.cs" />
+    <Compile Include="Activities\App\LaunchApp.cs" />
     <Compile Include="Activities\Browser\Forward.cs" />
     <Compile Include="Activities\Browser\Back.cs" />
     <Compile Include="Activities\Browser\Refresh.cs" />
@@ -85,6 +89,7 @@
       <DependentUpon>AndroidAutomator.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Utilities\ExecuteScript.cs" />
     <Compile Include="Utilities\QuitDriver.cs" />
     <Compile Include="Utilities\FindElement.cs" />
     <Compile Include="AndroidEmulatorScopeDesigner.xaml.cs">
@@ -101,7 +106,7 @@
     <Compile Include="Activities\TakeScreenshot.cs" />
     <Compile Include="Activities\Tap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\CloseApp.cs" />
+    <Compile Include="Activities\App\CloseApp.cs" />
     <Compile Include="Utilities\RunTest.cs" />
     <Compile Include="Utilities\WaitForElement.cs" />
   </ItemGroup>
@@ -120,5 +125,6 @@
       <LastGenOutput>AndroidAutomator.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

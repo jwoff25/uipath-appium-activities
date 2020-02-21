@@ -1,20 +1,13 @@
-﻿using System;
+﻿using System.Activities;
 using AndroidAutomator.Properties;
-using System.Activities;
-using System.Activities.Statements;
-using System.ComponentModel;
-using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.Enums;
-using OpenQA.Selenium.Appium.Service;
 
-namespace AndroidAutomator.Activities.Browser
+namespace AndroidAutomator.Activities.App
 {
-    [LocalizedDisplayName(nameof(Resources.RefreshActivityName))]
-    [LocalizedDescription(nameof(Resources.RefreshActivityDesc))]
-    public class Refresh : CodeActivity
+    [LocalizedDisplayName(nameof(Resources.CloseAppActivityName))]
+    [LocalizedDescription(nameof(Resources.CloseAppActivityDesc))]
+    public class CloseApp : CodeActivity
     {
-
         [LocalizedCategory(nameof(Resources.AndroidDriver))]
         [LocalizedDisplayName(nameof(Resources.DriverField))]
         [LocalizedDescription(nameof(Resources.AndroidDriverDesc))]
@@ -33,16 +26,8 @@ namespace AndroidAutomator.Activities.Browser
                 driver = Driver.Get(context);
             }
 
-            // Try to refresh
-            try
-            {
-                var nav = driver.Navigate();
-                nav.Refresh();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            driver.CloseApp();
         }
+
     }
 }

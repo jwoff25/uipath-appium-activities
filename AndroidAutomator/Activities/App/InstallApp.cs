@@ -8,12 +8,17 @@ using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Appium.Service;
 
-namespace AndroidAutomator.Activities.Browser
+namespace AndroidAutomator.Activities.App
 {
-    [LocalizedDisplayName(nameof(Resources.RefreshActivityName))]
-    [LocalizedDescription(nameof(Resources.RefreshActivityDesc))]
-    public class Refresh : CodeActivity
+    [LocalizedDisplayName(nameof(Resources.InstallAppActivityName))]
+    [LocalizedDescription(nameof(Resources.InstallAppActivityDesc))]
+    public class InstallApp : CodeActivity
     {
+        [LocalizedCategory(nameof(Resources.App))]
+        [LocalizedDisplayName(nameof(Resources.ApkPathField))]
+        [LocalizedDescription(nameof(Resources.ApkPathDesc))]
+        [RequiredArgument]
+        public InArgument<string> ApkPath { get; set; }
 
         [LocalizedCategory(nameof(Resources.AndroidDriver))]
         [LocalizedDisplayName(nameof(Resources.DriverField))]
@@ -33,11 +38,11 @@ namespace AndroidAutomator.Activities.Browser
                 driver = Driver.Get(context);
             }
 
-            // Try to refresh
+            string apkPath = ApkPath.Get(context);
+
             try
             {
-                var nav = driver.Navigate();
-                nav.Refresh();
+                driver.InstallApp(apkPath);
             }
             catch (Exception)
             {

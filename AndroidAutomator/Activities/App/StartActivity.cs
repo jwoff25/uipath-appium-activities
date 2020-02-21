@@ -8,12 +8,23 @@ using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Appium.Service;
 
-namespace AndroidAutomator.Activities.Browser
+namespace AndroidAutomator.Activities.App
 {
-    [LocalizedDisplayName(nameof(Resources.RefreshActivityName))]
-    [LocalizedDescription(nameof(Resources.RefreshActivityDesc))]
-    public class Refresh : CodeActivity
+    [LocalizedDisplayName(nameof(Resources.StartActivityActivityName))]
+    [LocalizedDescription(nameof(Resources.StartActivityActivityDesc))]
+    public class StartActivity : CodeActivity
     {
+        [LocalizedCategory(nameof(Resources.App))]
+        [LocalizedDisplayName(nameof(Resources.AppPackageField))]
+        [LocalizedDescription(nameof(Resources.AppPackageDesc))]
+        [RequiredArgument]
+        public InArgument<string> AppPackage { get; set; }
+
+        [LocalizedCategory(nameof(Resources.App))]
+        [LocalizedDisplayName(nameof(Resources.AppActivityField))]
+        [LocalizedDescription(nameof(Resources.AppActivityDesc))]
+        [RequiredArgument]
+        public InArgument<string> AppActivity { get; set; }
 
         [LocalizedCategory(nameof(Resources.AndroidDriver))]
         [LocalizedDisplayName(nameof(Resources.DriverField))]
@@ -33,11 +44,12 @@ namespace AndroidAutomator.Activities.Browser
                 driver = Driver.Get(context);
             }
 
-            // Try to refresh
+            string appPackage = AppPackage.Get(context);
+            string appActivity = AppActivity.Get(context);
+
             try
             {
-                var nav = driver.Navigate();
-                nav.Refresh();
+                driver.StartActivity(appPackage, appActivity);
             }
             catch (Exception)
             {

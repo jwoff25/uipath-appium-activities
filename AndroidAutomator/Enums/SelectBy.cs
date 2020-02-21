@@ -5,6 +5,9 @@ namespace AndroidAutomator
     {
         ID,
         Class,
-        XPath
+        XPath,
+        ExactText,
+        ContainsText,
+        RegexText
     }
 }

@@ -30,6 +30,15 @@ namespace AndroidAutomator
                 case SelectBy.XPath:
                     e = driver.FindElementByXPath(selector);
                     break;
+                case SelectBy.ExactText:
+                    e = driver.FindElementByAndroidUIAutomator(String.Format("new UiSelector().text(\"{0}\")", selector));
+                    break;
+                case SelectBy.ContainsText:
+                    e = driver.FindElementByAndroidUIAutomator(String.Format("new UiSelector().textContains(\"{0}\")", selector));
+                    break;
+                case SelectBy.RegexText:
+                    e = driver.FindElementByAndroidUIAutomator(String.Format("new UiSelector().textMatches(\"{0}\")", selector));
+                    break;
             }
             return e ?? throw new NotFoundException("Element with selector " + selector + " not found.");
         }
@@ -48,6 +57,15 @@ namespace AndroidAutomator
                     break;
                 case SelectBy.XPath:
                     e = driver.FindElementsByXPath(selector)[index];
+                    break;
+                case SelectBy.ExactText:
+                    e = driver.FindElementsByAndroidUIAutomator(String.Format("new UiSelector().text(\"{0}\")", selector)).ElementAt(index);
+                    break;
+                case SelectBy.ContainsText:
+                    e = driver.FindElementsByAndroidUIAutomator(String.Format("new UiSelector().textContains(\"{0}\")", selector)).ElementAt(index);
+                    break;
+                case SelectBy.RegexText:
+                    e = driver.FindElementsByAndroidUIAutomator(String.Format("new UiSelector().textMatches(\"{0}\")", selector)).ElementAt(index);
                     break;
             }
             return e ?? throw new NotFoundException("Element with selector " + selector + " not found.");
@@ -68,6 +86,15 @@ namespace AndroidAutomator
                 case SelectBy.XPath:
                     e = (AndroidElement)parent.FindElementByXPath(selector);
                     break;
+                case SelectBy.ExactText:
+                    e = (AndroidElement)parent.FindElementByAndroidUIAutomator(String.Format("new UiSelector().text(\"{0}\")", selector));
+                    break;
+                case SelectBy.ContainsText:
+                    e = (AndroidElement)parent.FindElementByAndroidUIAutomator(String.Format("new UiSelector().textContains(\"{0}\")", selector));
+                    break;
+                case SelectBy.RegexText:
+                    e = (AndroidElement)parent.FindElementByAndroidUIAutomator(String.Format("new UiSelector().textMatches(\"{0}\")", selector));
+                    break;
             }
             return e ?? throw new NotFoundException("Child with selector " + selector + " not found.");
         }
@@ -86,6 +113,15 @@ namespace AndroidAutomator
                     break;
                 case SelectBy.XPath:
                     e = (AndroidElement)parent.FindElementsByXPath(selector)[index];
+                    break;
+                case SelectBy.ExactText:
+                    e = (AndroidElement)parent.FindElementsByAndroidUIAutomator(String.Format("new UiSelector().text(\"{0}\")", selector)).ElementAt(index);
+                    break;
+                case SelectBy.ContainsText:
+                    e = (AndroidElement)parent.FindElementsByAndroidUIAutomator(String.Format("new UiSelector().textContains(\"{0}\")", selector)).ElementAt(index);
+                    break;
+                case SelectBy.RegexText:
+                    e = (AndroidElement)parent.FindElementsByAndroidUIAutomator(String.Format("new UiSelector().textMatches(\"{0}\")", selector)).ElementAt(index);
                     break;
             }
             return e ?? throw new NotFoundException("Child with selector " + selector + " not found.");

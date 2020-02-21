@@ -100,9 +100,9 @@ namespace AndroidAutomator.Activities
             base.CacheMetadata(metadata);
             if (LaunchType == LaunchType.App)
             {
-                if (ApkPath == null || AppPackage == null || AppActivity == null)
+                if (AppPackage == null || AppActivity == null)
                 {
-                    metadata.AddValidationError("If LaunchType is App, then the following fields need to be filled in: ApkPath, AppPackage, AppActivity.");
+                    metadata.AddValidationError("If LaunchType is App, then the following fields need to be filled in: AppPackage, AppActivity.");
                 }
             }
         }
@@ -139,16 +139,18 @@ namespace AndroidAutomator.Activities
             options.AddAdditionalCapability(MobileCapabilityType.Language, language);
             // Use UIAutomator2 for better performance
             options.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.AndroidUIAutomator2);
+            // Launch App or Browser depending on user input
             switch(LaunchType)
             {
                 case LaunchType.App:
-                    //App capabilities
-                    options.AddAdditionalCapability(MobileCapabilityType.App, apkPath);
+                    // App capabilities
+                    if (!String.IsNullOrEmpty(apkPath))
+                        options.AddAdditionalCapability(MobileCapabilityType.App, apkPath);
                     options.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, package);
                     options.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, activity);
                     break;
                 case LaunchType.Browser:
-                    //Browser capabilities
+                    // Browser capabilities
                     switch (BrowserType)
                     {
                         case BrowserType.Chrome:
@@ -157,13 +159,13 @@ namespace AndroidAutomator.Activities
                                 options.AddAdditionalCapability(AndroidMobileCapabilityType.ChromedriverExecutable, chromedriverPath);
                             break;
                         default:
-                            throw new ArgumentNullException("Missing Argument: BrowserType");
+                            throw new ArgumentNullException("Missing Argument: BrowserType.");
                     }
                     break;
                 default:
-                    throw new ArgumentNullException("Missing Argument: LaunchType");
+                    throw new ArgumentNullException("Missing Argument: LaunchType.");
             }
-            //Default Screenshot Path
+            // Default Screenshot Path
             options.AddAdditionalCapability(AndroidMobileCapabilityType.AndroidScreenshotPath, screenshotPath);
 
             driver = new AndroidDriver<AndroidElement>(server, options);
@@ -181,7 +183,7 @@ namespace AndroidAutomator.Activities
 
         private void OnFaulted(NativeActivityFaultContext faultContext, Exception propagatedException, ActivityInstance propagatedFrom)
         {
-            //TODO
+
         }
 
         private void OnCompleted(NativeActivityContext context, ActivityInstance completedInstance)
